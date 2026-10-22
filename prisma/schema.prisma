@@ -1,0 +1,15 @@
+model Opportunity {
+  id          String   @id @default(cuid())
+  title       String
+  company     String
+  location    String?
+  description String?
+  url         String?
+  skills      String[] @default([])
+  source      String
+  posted_at   DateTime @default(now())
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  @@unique([id])
+}
